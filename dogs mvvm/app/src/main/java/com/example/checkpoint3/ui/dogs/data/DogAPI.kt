@@ -1,4 +1,4 @@
-package com.example.checkpoint3.ui.home
+package com.example.checkpoint3.ui.dogs.data
 
 import retrofit2.http.GET
 

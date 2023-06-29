@@ -1,4 +1,4 @@
-package com.example.checkpoint3.ui.home
+package com.example.checkpoint3.ui.dogs.data
 
 import okhttp3.Interceptor
 import okhttp3.Response
