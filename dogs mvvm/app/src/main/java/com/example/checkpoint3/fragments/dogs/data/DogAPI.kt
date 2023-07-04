@@ -1,4 +1,4 @@
-package com.example.checkpoint3.ui.dogs.data
+package com.example.checkpoint3.fragments.dogs.data
 
 import retrofit2.http.GET
 

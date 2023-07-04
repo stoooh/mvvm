@@ -1,4 +1,4 @@
-package com.example.checkpoint3.ui.dogs.data
+package com.example.checkpoint3.fragments.dogs.data
 
 import okhttp3.Interceptor
 import okhttp3.Response

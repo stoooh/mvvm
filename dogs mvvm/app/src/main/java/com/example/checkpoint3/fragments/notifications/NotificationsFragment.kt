@@ -1,4 +1,4 @@
-package com.example.checkpoint3.ui.notifications
+package com.example.checkpoint3.fragments.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
