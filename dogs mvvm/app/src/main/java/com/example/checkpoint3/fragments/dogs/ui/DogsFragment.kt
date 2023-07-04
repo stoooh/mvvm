@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.checkpoint3.databinding.FragmentDogsBinding
 import com.example.checkpoint3.fragments.dogs.data.DogsRemote
+import com.example.checkpoint3.fragments.dogs.domain.Dogs
 
 class DogsFragment : Fragment() {
 
@@ -30,16 +31,18 @@ class DogsFragment : Fragment() {
         binding.button.setOnClickListener {
 
             viewModel.dogsLiveData.observe(viewLifecycleOwner) {
-                showBreeds(it)
+                if (it != null) {
+                    showBreeds(it)
+                }
             }
             viewModel.getDogs()
         }
         return root
     }
 
-    private fun showBreeds(breeds: DogsRemote?){
-        binding.textHome.text = breeds?.breed
-        binding.image.load(breeds?.img)
+    private fun showBreeds(breeds: List<Dogs>){
+        binding.textHome.text = breeds.breeds
+        binding.image.load(breeds.img)
     }
 
     override fun onDestroyView() {

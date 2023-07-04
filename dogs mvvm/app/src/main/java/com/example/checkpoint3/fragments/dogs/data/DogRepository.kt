@@ -1,8 +1,8 @@
 package com.example.checkpoint3.fragments.dogs.data
 
-import com.example.checkpoint3.fragments.dogs.domain.DogsDomainData
+import com.example.checkpoint3.fragments.dogs.domain.Dogs
 
 class DogRepository(private val DogAPI: DogAPI) {
     suspend fun getDogs() = DogAPI.getDogs()
-        .map { DogsDomainData(it.breed, it.img) }
+        .map { Dogs(it.breed, it.img) }
 }
