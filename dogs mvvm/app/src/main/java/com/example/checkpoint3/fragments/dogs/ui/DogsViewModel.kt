@@ -12,8 +12,8 @@ import java.util.Random
 
 class DogsViewModel(private val getDogsUseCase: DogsUseCase) : ViewModel() {
 
-    private val _dogsLiveData = MutableLiveData<List<Dogs>?>()
-    val dogsLiveData : MutableLiveData<List<Dogs>?> = _dogsLiveData
+    private val _dogsLiveData = MutableLiveData<Dogs>()
+    val dogsLiveData : MutableLiveData<Dogs> = _dogsLiveData
 
     fun getDogs(){
         viewModelScope.launch {
@@ -23,7 +23,7 @@ class DogsViewModel(private val getDogsUseCase: DogsUseCase) : ViewModel() {
         }
     }
 
-    fun getRandomDog(dogs: List<Dogs>): List<Dogs> {
+    fun getRandomDog(dogs: List<Dogs>): Dogs {
             val randomIndex = Random().nextInt(dogs.size)
         return dogs[randomIndex]
     }

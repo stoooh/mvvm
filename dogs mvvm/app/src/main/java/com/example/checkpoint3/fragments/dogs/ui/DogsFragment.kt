@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.checkpoint3.databinding.FragmentDogsBinding
-import com.example.checkpoint3.fragments.dogs.data.DogsRemote
 import com.example.checkpoint3.fragments.dogs.domain.Dogs
 
 class DogsFragment : Fragment() {
@@ -40,9 +39,9 @@ class DogsFragment : Fragment() {
         return root
     }
 
-    private fun showBreeds(breeds: List<Dogs>){
-        binding.textHome.text = breeds.breeds
-        binding.image.load(breeds.img)
+    private fun showBreeds(dogs: Dogs){
+        binding.textHome.text = dogs.breeds
+        binding.image.load(dogs.img)
     }
 
     override fun onDestroyView() {
