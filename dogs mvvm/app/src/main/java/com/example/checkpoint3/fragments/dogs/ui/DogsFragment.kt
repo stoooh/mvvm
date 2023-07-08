@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.checkpoint3.databinding.FragmentDogsBinding
@@ -14,6 +15,7 @@ class DogsFragment : Fragment() {
 
     private var _binding: FragmentDogsBinding? = null
 
+    private val viewModel: DogsViewModel by viewModels{ DogsViewModelFactory() }
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,8 +23,6 @@ class DogsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel = ViewModelProvider(this)[DogsViewModel::class.java]
-        DogsViewModelFactory()
 
         _binding = FragmentDogsBinding.inflate(inflater, container, false)
         val root: View = binding.root
