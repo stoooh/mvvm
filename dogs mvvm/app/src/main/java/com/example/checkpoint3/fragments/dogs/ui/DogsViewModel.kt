@@ -23,7 +23,7 @@ class DogsViewModel(private val getDogsUseCase: DogsUseCase) : ViewModel() {
         }
     }
 
-    fun getRandomDog(dogs: List<Dogs>): Dogs {
+    private fun getRandomDog(dogs: List<Dogs>): Dogs {
             val randomIndex = Random().nextInt(dogs.size)
         return dogs[randomIndex]
     }

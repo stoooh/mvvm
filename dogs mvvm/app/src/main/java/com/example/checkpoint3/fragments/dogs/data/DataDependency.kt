@@ -7,17 +7,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object DataDependency {
 
-    val authorization = AuthorizationInterceptor()
+    private val authorization = AuthorizationInterceptor()
 
-    val logging = HttpLoggingInterceptor()
+    private val logging = HttpLoggingInterceptor()
 
-    val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
         .addInterceptor(authorization)
         .build()
 
 
-    val retrofit = Retrofit.Builder()
+    private val retrofit = Retrofit.Builder()
         .baseUrl("https://dog-breeds2.p.rapidapi.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
