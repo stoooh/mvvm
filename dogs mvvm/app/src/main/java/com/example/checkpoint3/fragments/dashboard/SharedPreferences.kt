@@ -28,7 +28,7 @@ class SharedPreferences : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
 
         editText = binding.textDashboard
-        sharedPreferences = activity?.getSharedPreferences("edittext", Context.MODE_PRIVATE)!!
+        sharedPreferences = requireActivity().getSharedPreferences("edittext", Context.MODE_PRIVATE)
 
         val savedText = sharedPreferences.getString("text", null)
         editText.setText(savedText)
